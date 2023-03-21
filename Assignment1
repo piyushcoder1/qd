@@ -1,10 +1,10 @@
 // 1. Create a function which tells if the input number is even or odd.
 function even_or_odd(num){
     if(num % 2 == 0){
-        console.log("The Given Number is: Even");
+        console.log(num +" is an Even Number");
         }
     else{
-        console.log("The Given Number is: Odd");
+        console.log(num +":is an Odd");
         }
 const num=prompt("Enter the number:");
 even_or_odd(num);
