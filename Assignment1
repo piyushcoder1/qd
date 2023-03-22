@@ -1,4 +1,6 @@
 // 1. Create a function which tells if the input number is even or odd.
+const prompt=require("prompt-sync")();
+let num=prompt("Enter the number:");
 function even_or_odd(num){
     if(num % 2 == 0){
         console.log(num +" is an Even Number");
@@ -6,6 +8,6 @@ function even_or_odd(num){
     else{
         console.log(num +":is an Odd");
         }
-const num=prompt("Enter the number:");
-even_or_odd(num);
+    }
 
+    even_or_odd(num);
