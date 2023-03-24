@@ -14,7 +14,7 @@ D   65-66
 E   65 and less
 */
 // Program:-
-
+const prompt=require("prompt-sync")();
 function grade_sys(){
 var correct_s = /^[A_Za-z]+$/;
 var correct_n = /^[0-9]+$/;
