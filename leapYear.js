@@ -15,7 +15,7 @@ function nextLeapYear(year){
     while(!isLeapYear(nextYear)){
      nextYear++;
     }
-    console.log(year+" is not a leap year. After "+year+ nextYear+" is next leap year");
+    console.log(year+" is not a leap year. After "+year+" "+ nextYear+" is next leap year");
     //nsole.log(nextYear + " is next leap year after "+ year);
     
 }
