@@ -6,26 +6,27 @@
 ...
 5 x 10 = 50 */
 const fs = require('fs');
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-const number = process.argv[2];
+readline.question('Enter a number: ', num => {
 
-if (!number || isNaN(number)) {
-  console.error('Please enter a valid number as input');
-  process.exit(1);
-}
+  // Convert input to a number
+  num = Number(num);
 
-const filename = `table-${number}.txt`;
-
-let table = '';
-
-for (let i = 1; i <= 10; i++) {
-  table += `${number} x ${i} = ${number * i}\n`;
-}
-
-fs.writeFile(filename, table, (err) => {
-  if (err) {
-    console.error(`Error creating file: ${err}`);
-    process.exit(1);
+  // Create a write stream to the file
+  const file = fs.createWriteStream(`table-${num}.txt`);
+  
+  // Loop( 1 to 10 ) and write the multiplication table to the file
+  for (let i = 1; i <= 10; i++) {
+    const result = num * i;
+    file.write(`${num} x ${i} = ${result}\n`);
   }
-  console.log(`File ${filename} created successfully`);
+  
+  
+  file.end();
+  console.log(`Table ${num} created successfully.`);
+  readline.close();
 });
