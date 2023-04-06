@@ -1,8 +1,3 @@
-/* Write a program that handles a student table. 
- - accept student name, age and gender as input and save it in database 
- - accept student name or roll numbder and update date for that student
- - display all the records
- */
 const Pool = require('pg').Pool
 const pool = new Pool({
   user: 'postgres',
@@ -28,7 +23,7 @@ const insertNew = (req, res) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`User added with ID: ${results.insertId}`)
+    response.status(201).send(`New Student Added: ${results.insertId}`)
   })
 }
 
@@ -43,7 +38,7 @@ const updateNew = (req, res) => {
       if (error) {
         throw error
       }
-      res.status(200).send(`User modified with ID: ${id}`)
+      res.status(200).send(`Student Data Updated: ${id}`)
     }
   )
 }
