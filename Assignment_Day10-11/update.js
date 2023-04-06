@@ -9,6 +9,6 @@ const updateNew = (req, res) => {
       if (error) {
         throw error
       }
-      res.status(200).send(`Student Data Updated: ${id}`)
+      res.status(200).send(`Student Data Updated`)
     }
   )
