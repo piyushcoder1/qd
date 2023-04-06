@@ -1,8 +1,8 @@
 const updateNew=(req,res)=>{
     let user=req.body;
     let updateDate=`update students
-                    set date=${user.date},
-                    where name=${user.name}`
+                    set roll_number='${user.roll_number}'
+                    where id=${user.id}`
                     pool.query(updateDate,(error,result)=>{
                         if(!error){
 res.send('updated');
