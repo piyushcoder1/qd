@@ -1,5 +1,6 @@
 // Write a program that handles a student table. 
- // - accept student name, age and gender as input and save it in database 
+ // - accept student name, age and gender as input and save it in database
+// insert
 
 async function addStudent(name, age, gender) {
     const query = 'INSERT INTO students (name, age, gender) VALUES ($1, $2, $3)';
