@@ -1,14 +1,14 @@
-const updateNew = (req, res) => {
-  const id = parseInt(req.params.id)
-  const { date ,name} = req.body
-
-  pool.query(
-    'UPDATE students SET date = $6, WHERE id=$1 name = $2',
-    [date, name,id],
-    (error, results) => {
-      if (error) {
-        throw error
-      }
-      res.status(200).send(`Student Data Updated`)
-    }
-  )
+const updateNew=(req,res)=>{
+    let user=req.body;
+    let updateDate=`update students
+                    set date=${user.date},
+                    where name=${user.name}`
+                    pool.query(updateDate,(error,result)=>{
+                        if(!error){
+res.send('updated');
+                        }else{
+                            console.log(error.message);
+                        }
+                    })
+                    pool.end;
+}
