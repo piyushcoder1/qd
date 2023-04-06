@@ -5,6 +5,6 @@ const insertNew = (req, res) => {
     if (error) {
       throw error
     }
-    response.status(201).send(`New Student Added: ${results.insertId}`)
+    response.status(201).send(`New Student Added`)
   })
 }
