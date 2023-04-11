@@ -7,7 +7,7 @@ const client=new Client({
     database: "studentrecord"
 })
 
-const fetchUniqueUsers = async () => {
+const displayStudent = async () => {
     try {
         await client.connect(); 
         const { rows } = await client.query('SELECT * from student');
@@ -18,5 +18,4 @@ const fetchUniqueUsers = async () => {
         await client.end();      
     }
 };
-
-fetchUniqueUsers();
+displayStudent();
